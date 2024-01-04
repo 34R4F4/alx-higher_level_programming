@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdlib.h>
 /**
  * insert_node - function to insert value in order of linked-list
  * @number: the value to insert
@@ -15,10 +16,10 @@ listint_t *insert_node(listint_t **head, int number)
 	new_node->n = number;
 	new_node->next = NULL;
 
-	if(new_node->n < head->n || !head)
+	if(new_node->n < node_ptr->n || !head)
 	{
 		new_node->next = node_ptr;
-		return(*head = *new_node);
+		return(*head = new_node);
 	}
 
 	while(node_ptr)
