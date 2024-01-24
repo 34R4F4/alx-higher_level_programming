@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-
 """Square Class"""
 
+
 class Square:
-    
+
     def __init__(self, size):
         """
         Constructor for Square Class.
@@ -12,5 +12,4 @@ class Square:
         - size: An integer representing the size of the square.
         """
 
-        self.__size = size
-        #Private instance attribute
+        self.__size = size  # Private instance attribute
