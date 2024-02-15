@@ -3,7 +3,7 @@
 
 
 def say_my_name(first_name, last_name=""):
-    """Method for printing 'My name is <first name> <last name>'.
+    """Method for printing first name & last name.
 
     Args:
         first_name: first name (string).
