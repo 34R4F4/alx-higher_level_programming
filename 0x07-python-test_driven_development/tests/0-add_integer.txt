@@ -2,42 +2,17 @@
 ========================
 ```add_integer``` Method
 ------------------------
-Import function from module:
-	>>> add_int == __import__("0-add_integer").add_integer
 
-Test one integer:
-	>>> add_int(2)
-	100
-Test one integer and check second integer default:
-	>>> add_int(0)
-	98
-Test Two integers:
-	>>> add_int(10, 3)
-	13
-Test Two float:
-	>>> add_int(3.8, 0.5)
-	4.3
-Test one float:
-	>>> add_int(133.9)
-	231
-Test one negative integer:
-	>>> add_int(-50)
-	48
-Test one negative float:
-	>>> add_int(-90.5)
-	8
-Test two big integers:
-	>>> add_int(55555555, 33333333)
-	88888888
-Test positive, negative integers:
-	>>> add_int(80, -50)
-	30
-Test negative, positive integers:
-	>>> add_int(-100, 40)
-	-60
-Test positive, negative floats:
-	>>> add_int(50.8, -30.3)
-	20.5
+
+Import function from module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test one int argument:
+
+    >>> add_integer(2)
+    100
+
 Test one int argument and check default second:
 
     >>> add_integer(0)
