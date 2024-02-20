@@ -1,0 +1,69 @@
+"""
+The `5-text_indentation` module
+============================================
+How to use 5-text_indentation.py
+============================================
+
+This module contains one function called `text_indentation()`, which prints a text with 2 new lines after each occurrence of the characters: ., ? and :
+
+To use the function:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Pass the given text as a string:
+    >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere?""")
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <BLANKLINE>
+    Quonam modo?
+    <BLANKLINE>
+    Utrum igitur tibi litteram videor an totas paginas commovere?
+    <BLANKLINE>
+
+Pass an empty string as text:
+    >>> text_indentation("")
+
+Pass a text with spaces at the beginning:
+    >>> text_indentation("        Hello Breezy")
+    Hello Breezy
+
+Print a word with spaces around it:
+    >>> text_indentation("    Villegas    ")
+    Villegas
+
+Print a word with a special character at the end:
+    >>> text_indentation("    Hello    .")
+    Hello.
+    <BLANKLINE>
+
+Pass a text with space between words and a special character at the end:
+    >>> text_indentation("What is up baby doll?    how are you?")
+    What is up baby doll?
+    <BLANKLINE>
+    how are you?
+    <BLANKLINE>
+
+Pass a non-string as text:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Pass None as text:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+Pass no arguments to text_indentation:
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Pass more than one argument to text_indentation:
+    >>> text_indentation("Hola", "Commo Estas") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() takes 1 positional argument but ...
+"""
+
