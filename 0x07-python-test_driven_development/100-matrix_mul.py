@@ -8,7 +8,9 @@ Attributes:
 
 
 def matrix_mul(m_a, m_b):
-	"""Multiply two matrices.
+    """
+    Multiply two matrices.
+
     Args:
         m_a (list of lists of ints/floats): The first matrix.
         m_b (list of lists of ints/floats): The second matrix.
@@ -53,13 +55,16 @@ def matrix_mul(m_a, m_b):
     # Check if all rows in m_a and m_b have the same size
     row_lengths = set(len(row) for matrix in [m_a, m_b] for row in matrix)
     if len(row_lengths) > 1:
-        raise TypeError(size_error.format("m_a" if len(m_a[0]) == min(row_lengths) else "m_b"))
+        raise TypeError(size_error.format(
+            "m_a" if len(m_a[0]) == min(row_lengths) else "m_b"))
 
-    # Check if the number of columns in m_a is equal to the number of rows in m_b
+    # Check if the number of m_a columns equal to the number of m_b rows
     if len(m_a[0]) != len(m_b):
         raise ValueError(value_error.format("m_a", "m_b"))
 
     # Perform matrix multiplication
-    result_matrix = [[sum(a * b for a, b in zip(row_a, col_b)) for col_b in zip(*m_b)] for row_a in m_a]
+    result_matrix = [
+            [sum(a * b for a, b in zip(row_a, col_b)) for col_b in zip(*m_b)]
+            for row_a in m_a]
 
     return result_matrix
