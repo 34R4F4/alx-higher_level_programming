@@ -1,10 +1,11 @@
 # The `100-matrix_mul` module
 ==================================
-How to use 100-matrix_mul.py:
+How to use 100-matrix_mul.py
 
 This module contains one function called `matrix_mul()`, which multiplies two matrices.
 
-To use the function:-
+To use the function
+===================
 
 Importing the function matrix_mul.
     >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
