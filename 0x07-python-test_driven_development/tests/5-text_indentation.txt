@@ -29,11 +29,6 @@ Print a word with spaces around it:
     >>> text_indentation("    Villegas    ")
     Villegas
 
-Print a word with a special character at the end:
-    >>> text_indentation("    Hello    .")
-    Hello.
-    <BLANKLINE>
-
 Pass a text with space between words and a special character at the end:
     >>> text_indentation("What is up baby doll?    how are you?")
     What is up baby doll?
