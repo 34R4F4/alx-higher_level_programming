@@ -1,24 +1,24 @@
 #!/usr/bin/python3
-""" Rectangle Module """
+"""Defines a class Rectangle"""
 
 
 class Rectangle:
     """
-    class Rectangle that defines a rectangle.
+    Defines a rectangle with width and height attributes.
 
     Attributes:
-        width (int): The width of the rectangle (Private instance attribute).
-        height (int): The height of the rectangle (Private instance attribute).
+        width (int): The width of the rectangle.
+        height (int): The height of the rectangle.
     """
     def __init__(self, width=0, height=0):
-        """Initializes a rectangle instance.
+        """Initializes a new instance of Rectangle.
 
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
             height (int, optional): The height of the rectangle. Defaults to 0.
         """
-        self._height = height
-        self._width = width
+        self.height = height
+        self.width = width
 
     @property
     def width(self):
@@ -27,7 +27,7 @@ class Rectangle:
         Returns:
             int: The width of the rectangle.
         """
-        return self._width
+        return self.__width
 
     @property
     def height(self):
@@ -36,7 +36,7 @@ class Rectangle:
         Returns:
             int: The height of the rectangle.
         """
-        return self._height
+        return self.__height
 
     @width.setter
     def width(self, value):
@@ -54,7 +54,7 @@ class Rectangle:
         elif value < 0:
             raise ValueError("width must be >= 0")
         else:
-            self._width = value
+            self.__width = value
 
     @height.setter
     def height(self, value):
@@ -72,4 +72,4 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         else:
-            self._height = value
+            self.__height = value
