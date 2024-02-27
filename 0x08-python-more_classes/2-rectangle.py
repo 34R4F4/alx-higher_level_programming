@@ -4,14 +4,14 @@
 
 class Rectangle:
     """
-    Represents a rectangle.
+    Defines a rectangle with width and height attributes.
 
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
     """
     def __init__(self, width=0, height=0):
-        """Initializes a rectangle instance.
+        """Initializes a new instance of Rectangle.
 
         Args:
             width (int, optional): The width of the rectangle. Defaults to 0.
@@ -73,3 +73,22 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+    def area(self):
+        """Calculates the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """Calculates the perimeter of the rectangle.
+
+        Returns:
+            int: The perimeter of the rectangle.
+        """
+        if self.__height == 0 or self.width == 0:
+            return 0
+        else:
+            return 2 * (self.__height + self.__width)
