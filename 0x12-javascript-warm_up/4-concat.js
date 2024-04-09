@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/* script prints the first argument passed to it */
+/* script prints two arguments passed to it, in the following format: “ is ” */
 const { argv } = require('node:process');
 const arg1 = argv[2];
 const arg2 = argv[3];
