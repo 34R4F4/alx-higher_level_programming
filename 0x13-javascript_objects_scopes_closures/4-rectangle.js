@@ -23,17 +23,16 @@ class Rectangle {
   }
 
   // instance method called rotate() that exchanges the width and the height of the rectangle
-  rotate() {
-    let temp = this.height;
+  rotate () {
+    const temp = this.height;
     this.height = this.width;
     this.width = temp;
   }
 
   // instance method called double() that multiples the width and the height of the rectangle by 2
-  double() {
+  double () {
     this.height *= 2;
     this.width *= 2;
   }
-
 }
 module.exports = Rectangle;
