@@ -1,17 +1,19 @@
 #!/usr/bin/python3
 
 import sys
-import getpassi     # Secure way to prompt for password
 import MySQLdb
 
 
 def list_states(username, password, database):
-    """Connects to a MySQL database, retrieves states (ordered by ID),
+    """Connects to a MySQL database, retrieves a list of states ordered by ID,
        and displays them.
+
+    **Insecure for production!** Prompting for password directly exposes it.
+    Consider environment variables or a secure configuration file.
 
     Args:
         username (str): Username for the MySQL database.
-        password (str): Password (prompted securely).
+        password (str): Password for the MySQL database (prompted manually).
         database (str): Name of the database to connect to.
 
     Raises:
@@ -19,23 +21,24 @@ def list_states(username, password, database):
     """
 
     try:
-        # Securely prompt for password if not provided
-        if not password:
-            password = getpass.getpass("Enter password: ")
-
         # Connect to MySQL server (localhost, port 3306)
-        conn = MySQLdb.connect(host='localhost', port=3306,
-                               user=username, passwd=password, db=database)
+        conn = MySQLdb.connect(
+                host='localhost',
+                port=3306,
+                user=username, 
+                passwd=password, 
+                db=database
+                )
         cursor = conn.cursor()
 
         # Execute query to select all states, ordered by ID (ascending)
         cursor.execute("SELECT * FROM states ORDER BY states.id ASC")
         states = cursor.fetchall()
 
-        # Display results (consider formatting for better readability)
+        # Display results (consider formatting the output for readability)
         print("List of states:")
         for state in states:
-            print(state)  # You can customize the output format here
+            print(state)
 
     except MySQLdb.Error as err:
         print(f"Error connecting to database: {err}")
@@ -54,6 +57,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     username = sys.argv[1]
+    password = sys.argv[2]
     database = sys.argv[2]
 
-    list_states(username, None, database)
+    list_states(username, password, database)
